@@ -10,17 +10,33 @@
 </head>
 
 <body>
-    <article class="container">
+    <main class="container">
+        <header class=banner></header>
         <article class="auth">
             <section class="auth--login"></section>
             <section class="auth--register"></section>
         </article>
         <article class="dashboard">
-            <!-- All your Nutshell are belong here -->
+            <section class="formContainer">
+                <article class="leftContainer">
+                    <div class="newsContainer"></div>
+                    <div class="tasksContainer"></div>
+                </article>
+                <div class="eventContainer"></div>
+            </section>
+            <section class="socialContainer">
+                <div class="chatContainer"></div>
+                <div class="friendContainer"></div>
+            </section>
+            </section>
         </article>
-    </article>
+        <div class="modal eventModalContainer"></div>
+        <div class="modal taskModalContainer"></div>
+        <div class="modal newsModalContainer"></div>
+    </main>
 
     <script src="./scripts/main.js" type="module"></script>
 
 </body>
+
 </html>

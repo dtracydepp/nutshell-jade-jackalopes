@@ -1,4 +1,4 @@
-import { getTasks, saveTask, useTasks } from "./TaskProvider"
+import { getTasks, saveTask, useTasks } from "./TaskProvider.js"
 
 
 const contentTarget = document.querySelector(".taskModalContainer")

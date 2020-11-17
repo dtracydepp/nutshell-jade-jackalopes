@@ -26,7 +26,7 @@ eventHub.addEventListener("click", clickEvent => {
         const eventName = document.querySelector("#event--name").value
         const eventDate = document.querySelector("#event--date").value
         const eventLocation = parseInt(document.querySelector("#event--location").value)
-        const userId = sessionStorage.getItem("activeUser")
+        const userId = parseInt(sessionStorage.getItem("activeUser"))
         
     //make a new object representation of event
     //key value pairs here

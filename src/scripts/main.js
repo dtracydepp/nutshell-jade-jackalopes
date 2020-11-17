@@ -5,6 +5,9 @@ LoginForm()
 RegisterForm()
 Nutshell()
 
+LoginForm()
+RegisterForm()
+Nutshell()
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`

@@ -1,7 +1,6 @@
 //Author: Erica Purpose: Create the form which will save new Events to DOM
 
 import { saveEvent } from "./EventProvider.js"
-// import { getUsers, useUsers } from "../UserProvider.js"
 
 //designates target area where events will be sent
 const eventTarget = document.querySelector(".eventModalContainer")
@@ -27,7 +26,7 @@ eventHub.addEventListener("click", clickEvent => {
         const eventName = document.querySelector("#event--name").value
         const eventDate = document.querySelector("#event--date").value
         const eventLocation = parseInt(document.querySelector("#event--location").value)
-        // const userId = parseInt(document.querySelector(sessionStorage.getItem("#activeUser").value))
+        const userId = sessionStorage.getItem("activeUser")
         
     //make a new object representation of event
     //key value pairs here
@@ -35,7 +34,7 @@ eventHub.addEventListener("click", clickEvent => {
         eventName,
         eventDate,
         eventLocation,
-        // userId
+        userId
         
     }
     //Chane API state and application state

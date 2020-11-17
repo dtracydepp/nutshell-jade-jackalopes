@@ -1,9 +1,15 @@
+/*Author: Erica Purpose: Creates functions to get event list,
+use the event list, delete an event, save a new event
+Dispatches save event, which is listened for in EventList
+*/
+
 //importing weather modules to use when rendering events
 // import { getWeather, useWeather } from "../weather/WeatherProvider"
 
 //designates eventHub where outputs will be sent or displayed
 const eventHub = document.querySelector(".container")
 
+//disptaches newEventSaved to eventHub, listened for in EventList
 const dispatchSaveEvent = () => {
     const eventSavedCustomEvent = new CustomEvent("newEventSaved")
     //dispatches new event to the eventHub

@@ -1,3 +1,7 @@
+/*Author: Erica Purpose: Provides HTML string representation for events
+Creates showWeatherButtonClicked event for WeatherDetail.js
+*/
+
 const eventHub = document.querySelector(".container")
 
 //convert object to HTML string

@@ -12,7 +12,7 @@ export const EventAsHTML = (eventObj) => {
     <h3>${eventObj.eventName}</h3>
     <p>Date: ${eventObj.eventDate}</p>
     <p>Location: ${eventObj.eventLocation}</p>
-    <button id="showWeatherButton--${eventObj.id}">Show Weather</button>
+    <button id="showWeatherButton--${eventObj.eventLocation}">Show Weather</button>
     <button id="deleteEvent--${eventObj.id}">Delete Event</button>
     </div>
     `
@@ -22,11 +22,11 @@ a custom event with weather information
 Listened for by WeatherDetail.js
 */
 eventHub.addEventListener("click", clickEvent => {
-    const [prefix, id] = clickEvent.target.id.split("--")
+    const [prefix, eventLocation] = clickEvent.target.id.split("--")
     if (prefix === "showWeatherButton") {
     const weatherClicked = new CustomEvent("showWeatherButtonClicked", {
         detail: {
-            eventId: id
+            eventLocation: eventLocation
         }
     })
     console.log("click", clickEvent)

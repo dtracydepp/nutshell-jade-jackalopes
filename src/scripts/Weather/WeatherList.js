@@ -7,23 +7,14 @@ const eventHub = document.querySelector(".container")
 const weatherContainer = document.querySelector(".eventContainer") //<< Might change containers
 
 
-eventHub.addEventListener("showWeatherButtonClicked", showWeatherEventObj => { 
+eventHub.addEventListener("showWeatherButtonClicked", event => { 
   
-    const selectedEventLocation = showWeatherEventObj.detail.eventLocation
-    const eventsArray =  useEvents() 
+    const selectedEventLocation = event.detail.eventLocation
 
-     console.log("heard that the user clicked a weather button on an event, almost time for weather", selectedEventLocation)  
-    
-    const filteredEventArray = eventsArray.find((eventObj) => {
-        if(eventObj.location === selectedEventLocation) {
-            return true
-        }
-            return false
-    })             
+     console.log("heard that the user clicked a weather button on an event, almost time for weather", selectedEventLocation)              
 
     
-    
-    getWeatherItems(filteredEventArray.eventLocation)   //<this needs to pull zip codes
+    getWeatherItems(selectedEventLocation)   //<this needs to pull zip codes
     .then(()=> {
         const slicedUpWeatherArray = useWeatherItems()
         render(slicedUpWeatherArray)

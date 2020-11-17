@@ -23,7 +23,7 @@ eventHub.addEventListener("showWeatherButtonClicked", showWeatherEventObj => {
 
     
     
-    getWeatherItems(filteredEventArray.location)   //<this needs to pull zip codes
+    getWeatherItems(filteredEventArray.zipcode)   //<this needs to pull zip codes
     .then(()=> {
         const slicedUpWeatherArray = useWeatherItems()
         render(slicedUpWeatherArray)

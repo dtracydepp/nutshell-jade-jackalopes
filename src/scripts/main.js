@@ -1,9 +1,20 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+
+import "./events/EventProvider.js"
+import { EventForm } from "./events/EventForm.js"
+import { EventList } from "./events/EventList.js"
+import "./events/EventHTML.js"
+
 LoginForm()
 RegisterForm()
 Nutshell()
+
+
+EventForm()
+EventList()
+
 
 
 /*

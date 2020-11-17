@@ -5,7 +5,7 @@ export const WeatherHTML = (weatherObj) => {
         <div class= "weather--maxTemp">High of ${weatherObj.main.temp_max}°</div>
         <div class= "weather--minTemp">Low of ${weatherObj.main.temp_min}°</div>
         <div class= "weather--description">${weatherObj.weather.description}</div>
-        <img class= "weather--icon"src="http://openweathermap.org/img/wn/${weatherObj.weather.icon}@2x.png" alt="weather icon">
+        <img class= "weather--temp"src="http://openweathermap.org/img/wn/${weatherObj.weather.icon}@2x.png" alt="weather icon">
     </section>
     `
 }

@@ -4,7 +4,7 @@ import { Task } from "./TaskHTML.js"
 const taskContainer = document.querySelector(".tasksContainer");
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener(".taskStateChanged", () => TaskList())
+eventHub.addEventListener("taskStateChanged", () => TaskList())
 
 export const TaskList = () => {
     getTasks()
@@ -25,15 +25,28 @@ const render = (taskCollection) => {
     `
 }
 
-eventHub.addEventListener("click", event => {
-    if (event.target.id.startsWith("delete")) {
-        const [prefix, id] = event.target.id.split("--")
+eventHub.addEventListener("click", deleteEvent => {
+    if (deleteEvent.target.id.startsWith("delete")) {
+        const [prefix, id] = deleteEvent.target.id.split("--")
 
         deleteTask(id).then(
             () => {
-                const updateTask = useTasks()
-                render(updateTask)
+                const deleteTask = useTasks()
+                render(deleteTask)
             }
         )   
     }
 })
+
+// eventHub.addEventListener("click", hideEvent => {
+//     if (hideEvent.target.id.startsWith("hide")) {
+//         const [prefix, id] = hideEvent.target.id.split("--")
+
+//         hideTask(id).then(
+//             () => {
+//                 const hideTask = useTasks()
+//                 render(hideTask)
+//             }
+//         )
+//     }
+// })

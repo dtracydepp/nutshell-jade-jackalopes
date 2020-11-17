@@ -5,3 +5,4 @@ dist/
 database.json
 .vscode
 Settings.js
+ModalTester.js

@@ -7,7 +7,7 @@ const eventHub = document.querySelector(".container")
 const weatherContainer = document.querySelector(".eventContainer") //<< Might change containers
 
 
-eventHub.addEventListener("//*showWeatherButtonCLicked*//", showWeatherEventObj => { 
+eventHub.addEventListener("showWeatherButtonClicked", showWeatherEventObj => { 
   
     const selectedEventLocation = showWeatherEventObj.detail.parkThatWasChosen
     const eventsArray =  useEvents() 
@@ -23,7 +23,7 @@ eventHub.addEventListener("//*showWeatherButtonCLicked*//", showWeatherEventObj 
 
     
     
-    getWeatherItems(filteredEventArray.latitude, filteredEventArray.longitude)
+    getWeatherItems(filteredEventArray.location)   //<this needs to pull zip codes
     .then(()=> {
         const slicedUpWeatherArray = useWeatherItems()
         render(slicedUpWeatherArray)
@@ -33,15 +33,15 @@ eventHub.addEventListener("//*showWeatherButtonCLicked*//", showWeatherEventObj 
 
 
 const render = (weatherArray) => {  
-    let weatherBlockHTMLRepresentations = ""
+    let weatherHTMLRepresentation = ""
     
      for (let slicedWeather of weatherArray) {
-        weatherBlockHTMLRepresentations += WeatherHTML(slicedWeather)
+        weatherHTMLRepresentation += WeatherHTML(slicedWeather)
      }
         weatherContainer.innerHTML = `
-    <h3>7-Day Forecast</3>
+    <h3>Day-of Forecast</3>
     <section class="weatherItem">
-        ${weatherBlockHTMLRepresentations}
+        ${weatherHTMLRepresentation}
     </section>
     `
     }

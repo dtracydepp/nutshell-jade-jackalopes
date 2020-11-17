@@ -1,5 +1,5 @@
-import { useEvents } from "../????/EventProvider.js";
-import { getWeatherItems } from "../weather/WeatherProvider.js"
+import { useEvents } from "../events/EventProvider.js";
+import { getWeatherItems } from "../Weather/WeatherProvider.js"
 import { WeatherHTML } from "./WeatherHTML.js";
 import { useWeatherItems } from "./WeatherProvider.js"
 
@@ -9,10 +9,10 @@ const weatherContainer = document.querySelector(".eventContainer") //<< Might ch
 
 eventHub.addEventListener("showWeatherButtonClicked", showWeatherEventObj => { 
   
-    const selectedEventLocation = showWeatherEventObj.detail.parkThatWasChosen
+    const selectedEventLocation = showWeatherEventObj.detail.eventLocation
     const eventsArray =  useEvents() 
 
-    // console.log("heard that the user clicked a weather button on an event, almost time for weather", selectedParkName)  
+     console.log("heard that the user clicked a weather button on an event, almost time for weather", selectedEventLocation)  
     
     const filteredEventArray = eventsArray.find((eventObj) => {
         if(eventObj.location === selectedEventLocation) {
@@ -23,7 +23,7 @@ eventHub.addEventListener("showWeatherButtonClicked", showWeatherEventObj => {
 
     
     
-    getWeatherItems(filteredEventArray.zipcode)   //<this needs to pull zip codes
+    getWeatherItems(filteredEventArray.eventLocation)   //<this needs to pull zip codes
     .then(()=> {
         const slicedUpWeatherArray = useWeatherItems()
         render(slicedUpWeatherArray)

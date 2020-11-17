@@ -37,7 +37,7 @@ export const saveEvent = (event) => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(note)
+        body: JSON.stringify(event)
     })
     //gets all events from API and weather 
     .then(getEvents)
@@ -48,7 +48,7 @@ export const saveEvent = (event) => {
 
 //deletes event from API
 export const deleteEvent = eventId => {
-    return festch(`http://localhost:8088/events/${eventId}`, {
+    return fetch(`http://localhost:8088/events/${eventId}`, {
         method: "DELETE"
     })
     .then(getEvents)

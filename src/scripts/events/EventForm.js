@@ -4,7 +4,7 @@ import { saveEvent } from "./EventProvider.js"
 // import { getUsers, useUsers } from "../UserProvider.js"
 
 //designates target area where events will be sent
-const eventTarget = document.querySelector(".eventContainer")
+const eventTarget = document.querySelector(".eventModalContainer")
 const eventHub = document.querySelector(".container")
 // const users = useUsers()
 
@@ -24,20 +24,23 @@ const render = () => {
 //submit should grab values from inputs, build new event obbject, and POST new event to API
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveEvent") {
-        const eventName = document.querySelector("event--name").value
-        const eventDate = document.querySelector("event--date").value
-        const eventLocation = parseInt(document.querySelector("event--location").value)
-        const userId = document.querySelector(sessionStorage.getItem("activeUser", user.id))
+        const eventName = document.querySelector("#event--name").value
+        const eventDate = document.querySelector("#event--date").value
+        const eventLocation = parseInt(document.querySelector("#event--location").value)
+        // const userId = parseInt(document.querySelector(sessionStorage.getItem("#activeUser").value))
+        
     //make a new object representation of event
     //key value pairs here
     const newEvent = {
         eventName,
         eventDate,
         eventLocation,
-        userId
+        // userId
+        
     }
     //Chane API state and application state
     saveEvent(newEvent)
+    // console.log(userId)
     }
     
 })

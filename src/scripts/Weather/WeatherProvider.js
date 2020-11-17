@@ -2,8 +2,8 @@ import apiObject from "../Settings.js";
 
 let weatherItems = []  
 
-export const getWeatherItems = (latitude, longitude) => { console.log("getting weather")
-  return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&appid=${apiObject.weatherKey}&units=imperial`)
+export const getWeatherItems = (zipcode) => { console.log("getting weather")
+  return fetch(`api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=${apiObject.weatherKey}&units=imperial`)
       .then(
           response => response.json())
       .then(
@@ -19,3 +19,4 @@ export const useWeatherItems = () => {  //<copies array^ for later use in code
 }
 
 // console.log("yay my array got filled", weatherItems)     
+

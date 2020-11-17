@@ -23,7 +23,7 @@ eventHub.addEventListener("//*showWeatherButtonCLicked*//", showWeatherEventObj 
 
     
     
-    getWeatherItems(filteredParkArray.latitude, filteredParkArray.longitude)
+    getWeatherItems(filteredEventArray.latitude, filteredEventArray.longitude)
     .then(()=> {
         const slicedUpWeatherArray = useWeatherItems()
         render(slicedUpWeatherArray)
@@ -36,11 +36,11 @@ const render = (weatherArray) => {
     let weatherBlockHTMLRepresentations = ""
     
      for (let slicedWeather of weatherArray) {
-        weatherBlockHTMLRepresentations += WeatherBlock(slicedWeather)
+        weatherBlockHTMLRepresentations += WeatherHTML(slicedWeather)
      }
         weatherContainer.innerHTML = `
     <h3>7-Day Forecast</3>
-    <section class="weatherList">
+    <section class="weatherItem">
         ${weatherBlockHTMLRepresentations}
     </section>
     `

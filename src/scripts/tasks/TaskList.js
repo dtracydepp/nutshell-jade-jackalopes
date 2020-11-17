@@ -1,4 +1,4 @@
-import { getTasks, useTasks } from "./TaskProvider.js";
+import { deleteTask, getTasks, useTasks } from "./TaskProvider.js";
 import { Task } from "./TaskHTML.js"
 
 const taskContainer = document.querySelector(".tasksContainer");
@@ -24,3 +24,16 @@ const render = (taskCollection) => {
     ${taskHTMLRepresentation}
     `
 }
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id.startsWith("delete")) {
+        const [prefix, id] = event.target.id.split("--")
+
+        deleteTask(id).then(
+            () => {
+                const updateTask = useTasks()
+                render(updateTask)
+            }
+        )   
+    }
+})

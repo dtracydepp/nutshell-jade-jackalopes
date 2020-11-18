@@ -10,7 +10,7 @@ eventHub.addEventListener("newEventSaved", () => EventList())
 
 
 
-//renders events and weather?
+//renders events
 const render = (eventsArray) => {
 //creates empty string to hold event HTML
 let eventsHTMLRepresentations = ""
@@ -39,7 +39,7 @@ eventHub.addEventListener("click", clickEvent => {
     if(clickEvent.target.id.startsWith("deleteEvent--")) {
         const [prefix, id] = clickEvent.target.id.split("--")
         //invoke function that does delete operation
-        //once delete,d then invoke useEvents and render new event list
+        //once deleted then invoke useEvents and render new event list
         deleteEvent(id).then(
             () => {
                 const updatedEvents = useEvents()

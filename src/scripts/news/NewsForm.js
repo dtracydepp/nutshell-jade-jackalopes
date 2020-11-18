@@ -40,6 +40,7 @@ eventHub.addEventListener("click", clickEvent => {
         const title = document.querySelector("#news--title").value
         const synopsis = document.querySelector("#news--synopsis").value
         const url = parseInt(document.querySelector("#news--url").value)
+        const userId = parseInt(sessionStorage.getItem("activeUser"))
         const timestamp = Date.now()
 
 // turns user input values into news object to be sent to API

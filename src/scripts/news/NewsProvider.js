@@ -14,10 +14,11 @@ const dispatchStateChangeEvent = () => {
 let news = []
 
 export const getArticles = () => {
-    return fetch('http://localhost:8088/news')
+    return fetch("http://localhost:8088/news")
         .then(response => response.json())
         .then(parsedNews => {
             news = parsedNews
+            console.log(parsedNews)
         })
 
 }
@@ -27,7 +28,7 @@ export const useArticles = () => {
 }
 
 export const saveArticles =(news) => {
-return fetch('http://localhost:8088/news', {
+return fetch("http://localhost:8088/news", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

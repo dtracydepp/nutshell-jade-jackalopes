@@ -1,10 +1,10 @@
 // creates the news form and renders to the DOM, click event for the save button, and save will grab values from input and build a new object to post news on API.
 
-// import {getArticles, useArticles} from "../src/scripts/news/NewsProvider.js"
-import {saveArticles} from "./src/scripts/news/NewsProvider.js"
-import { getArticles } from "./src/scripts/news/NewsProvider.js"
 
-const contentTarget = document.querySelector(".newsContainer")
+import {saveArticles} from "./NewsProvider.js"
+
+
+const contentTarget = document.querySelector(".newsModalContainer")
 const eventHub = document.querySelector(".container")
 
 
@@ -59,8 +59,10 @@ eventHub.addEventListener("click", clickEvent => {
 
 // function to render the form for adding news articles
 export const makeNoteForm = () => {  
-    getArticles()
+  
     console.log("Will my news form show?")
     render ()
 
 }
+
+eventHub.addEventListener("addNewArticle", makeNoteForm)

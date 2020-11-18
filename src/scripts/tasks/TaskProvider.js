@@ -17,7 +17,7 @@ export const getTasks = () => {
 }
 
 export const useTasks = () => {
-    return tasks.slice()
+    return tasks.slice()  //tasks.slice.filter for isComplete
 }
 
 export const saveTask = task => {
@@ -39,13 +39,16 @@ export const deleteTask = taskId => {
         .then(getTasks)
 }
 
-export const hideTask = task => {
-    return fetch("http://localhost:8088/tasks", {
-        method: "POST",
+export const completeTask = taskId => { //creating completeTask function with taskId as a parameter (need to connect the checkbox/isComplete to a particular task id)
+    const taskComplete = { //create taskComplete variable
+        isComplete: true //changes isComplete to true
+    }
+    return fetch(`http://localhost:8088/tasks/${taskId}`, { //fetching data from local hosts for the given taskId
+        method: "PATCH", //PATCH method edits/updates a single key:value pair in the database
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(task)
+        body: JSON.stringify(taskComplete) //passing through the variable from line 43 (look up stringify to better explain)
     })
     .then(getTasks)
     .then(dispatchStateChangeEvent)

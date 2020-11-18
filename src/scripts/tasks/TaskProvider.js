@@ -48,7 +48,7 @@ export const completeTask = taskId => { //creating completeTask function with ta
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(taskComplete) //passing through the variable from line 43 (look up stringify to better explain)
+        body: JSON.stringify(taskComplete) //passing through the variable from line 43  (look up stringify to better explain)
     })
     .then(getTasks)
     .then(dispatchStateChangeEvent)

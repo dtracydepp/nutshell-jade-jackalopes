@@ -30,7 +30,7 @@ const render = () => {
         <button id="saveArticle">Save Article</button>
     `
 
-    // not sure how to do the return statement
+    // not sure if I need a return statement
 }
 
 // not sure if this is right
@@ -43,7 +43,7 @@ eventHub.addEventListener("click", clickEvent => {
         const timestamp = Date.now()
 
 // turns user input values into news object to be sent to API
-        const newArticle = {
+        const newsArticle = {
             title,
             synopsis,
             url,
@@ -51,7 +51,7 @@ eventHub.addEventListener("click", clickEvent => {
             timestamp
         }
 // Send the article to the API
-        saveArticles(newArticle)
+        saveArticles(newsArticle)
     }
 })
 

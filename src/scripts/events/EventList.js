@@ -8,7 +8,9 @@ const eventHub = document.querySelector(".container")
 //listens for newEventSaved, calls EventList when it happens
 eventHub.addEventListener("newEventSaved", () => EventList())
 
-
+const currentDate = new Date()
+const currentDateUTC = Date.parse(currentDate)
+console.log(currentDateUTC)
 
 //renders events
 const render = (eventsArray) => {
@@ -48,3 +50,4 @@ eventHub.addEventListener("click", clickEvent => {
         )
     }
 })
+

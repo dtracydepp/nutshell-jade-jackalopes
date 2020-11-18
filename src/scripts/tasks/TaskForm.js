@@ -24,13 +24,15 @@ const render = () => {
 eventHub.addEventListener("click", event => {
     if (event.target.id === "saveTask") {
         const name = document.querySelector("#task--name").value
-        const date = document.querySelector("#task--name").value
-        const userId = sessionStorage.getItem("activeUser")
+        const date = document.querySelector("#task--date").value
+        const userId = parseInt(sessionStorage.getItem("activeUser"))
+
         
         const newTask = {
             name,
             date,
-            userId
+            userId,
+            isComplete: false //sets isComplete to false as default so that tasks appear unless checked. don't need to add to the event listener from line 24 because the value is set here.
         }
         saveTask(newTask)
     }

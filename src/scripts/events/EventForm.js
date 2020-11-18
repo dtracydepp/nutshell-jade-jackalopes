@@ -32,6 +32,7 @@ eventHub.addEventListener("click", clickEvent => {
     //key value pairs here
     const newEvent = {
         eventName,
+        "eventDateUTC": Date.parse(eventDate),
         eventDate,
         eventLocation,
         userId

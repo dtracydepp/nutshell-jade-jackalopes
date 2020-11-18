@@ -1,3 +1,6 @@
+//Author: Alan Andrusky
+//Purpose: Listens for a dispatched event from separate module to trigger a rendered Weather to DOM
+
 import { useEvents } from "../events/EventProvider.js";
 import { getWeatherItems } from "../Weather/WeatherProvider.js"
 import { WeatherHTML } from "./WeatherHTML.js";
@@ -14,23 +17,25 @@ eventHub.addEventListener("showWeatherButtonClicked", event => {
      console.log("heard that the user clicked a weather button on an event, almost time for weather", selectedEventLocation)              
 
     
-    getWeatherItems(selectedEventLocation)   //<this needs to pull zip codes
+    getWeatherItems(selectedEventLocation)   //<this needs to pull zip codes  *it does
     .then(()=> {
-        const slicedUpWeatherArray = useWeatherItems()
-        render(slicedUpWeatherArray)
+        const WeatherItem = useWeatherItems()
+        render(WeatherItem)
+        console.log("IS THIS WORKING", WeatherItem)
     })
 })
 
 
 
-const render = (weatherArray) => {  
+const render = (WeatherItem) => {   
+    console.log("inside render", WeatherItem)  
     let weatherHTMLRepresentation = ""
     
-     for (let slicedWeather of weatherArray) {
-        weatherHTMLRepresentation += WeatherHTML(slicedWeather)
-     }
+                         //<so why am I even looping here?
+        weatherHTMLRepresentation += WeatherHTML(WeatherItem)
+         
         weatherContainer.innerHTML = `
-    <h3>Day-of Forecast</3>
+    <h3>Current Forecast</3>
     <section class="weatherItem">
         ${weatherHTMLRepresentation}
     </section>

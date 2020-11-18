@@ -12,6 +12,9 @@ const currentDate = new Date()
 const currentDateUTC = Date.parse(currentDate)
 console.log(currentDateUTC)
 
+
+
+
 //renders events
 const render = (eventsArray) => {
 //creates empty string to hold event HTML
@@ -32,6 +35,24 @@ export const EventList = () => {
     .then(() => {
         const allEvents = useEvents()
         console.log(allEvents)
+        const upcomingEvents = allEvents.filter(event => event.eventDateUTC > currentDateUTC)
+        console.log(upcomingEvents, "upcoming events")
+        const closest = upcomingEvents.reduce((a, b) => {
+            // for (const event of upcomingEvents) {
+                // console.log("all events", allEvents)
+            // if (event.eventDateUTC > currentDateUTC) {
+            //     console.log("eventdates", event.eventDateUTC)
+                let aDiff = Math.abs(a.eventDateUTC - currentDateUTC);
+                let bDiff = Math.abs(b.eventDateUTC - currentDateUTC);
+        
+            // if (aDiff == bDiff) {
+            //     // Choose largest vs smallest (> vs <)
+            //     return a < b ? a : b;
+            // } else {
+                return bDiff < aDiff ? b : a;
+            
+        })
+        console.log("closest number", closest)
         render(allEvents)
     })
 }
@@ -45,6 +66,25 @@ eventHub.addEventListener("click", clickEvent => {
         deleteEvent(id).then(
             () => {
                 const updatedEvents = useEvents()
+
+                const upcomingEvents = updatedEvents.filter(event => event.eventDateUTC > currentDateUTC)
+        console.log(upcomingEvents, "upcoming events")
+        const closest = upcomingEvents.reduce((a, b) => {
+            // for (const event of upcomingEvents) {
+                // console.log("all events", allEvents)
+            // if (event.eventDateUTC > currentDateUTC) {
+            //     console.log("eventdates", event.eventDateUTC)
+                let aDiff = Math.abs(a.eventDateUTC - currentDateUTC);
+                let bDiff = Math.abs(b.eventDateUTC - currentDateUTC);
+        
+            // if (aDiff == bDiff) {
+            //     // Choose largest vs smallest (> vs <)
+            //     return a < b ? a : b;
+            // } else {
+                return bDiff < aDiff ? b : a;
+            
+        })
+        console.log("closest number", closest)
                 render(updatedEvents)
             }
         )

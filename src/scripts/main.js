@@ -9,12 +9,6 @@ import { EventForm } from "./events/EventForm.js"
 import { EventList } from "./events/EventList.js"
 import "./events/EventHTML.js"
 
-
-import "./events/EventProvider.js"
-import { EventForm } from "./events/EventForm.js"
-import { EventList } from "./events/EventList.js"
-import "./events/EventHTML.js"
-
 import "./Weather/WeatherList.js"
 
 LoginForm()

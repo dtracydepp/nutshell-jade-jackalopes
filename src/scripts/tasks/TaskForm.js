@@ -1,5 +1,7 @@
-import { getTasks, saveTask, useTasks } from "./TaskProvider.js"
+//Author: Patrick Stewart
+//Purpose: 
 
+import { getTasks, saveTask, useTasks } from "./TaskProvider.js"
 
 const contentTarget = document.querySelector(".taskModalContainer")
 const eventHub = document.querySelector(".container")
@@ -7,7 +9,7 @@ const eventHub = document.querySelector(".container")
 export const TaskForm = () => {
     getTasks().then(() => {
         const listOfTasks = useTasks()
-        // console.log(listOfTasks)
+        console.log(listOfTasks)
         render(listOfTasks)
     })
 }

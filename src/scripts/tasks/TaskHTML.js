@@ -1,3 +1,6 @@
+//Author: Patrick Stewart
+//Purpose: 
+
 import { completeTask } from "./TaskProvider.js"
 
 const eventHub = document.querySelector(".container")

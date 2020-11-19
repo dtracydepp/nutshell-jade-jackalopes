@@ -1,3 +1,6 @@
+//Author: Patrick Stewart
+//Purpose: 
+
 import { getChats, sendChat, useChats } from "./ChatProvider.js"
 
 const contentTarget = document.querySelector(".chatFormContainer")

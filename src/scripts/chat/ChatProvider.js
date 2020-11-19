@@ -1,3 +1,6 @@
+//Author: Patrick Stewart
+//Purpose: 
+
 const eventHub = document.querySelector(".container")
 const dispatchStateChangeEvent = () => {
     const chatStateChangedEvent = new CustomEvent("chatStateChanged")

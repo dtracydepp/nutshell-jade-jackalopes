@@ -1,3 +1,6 @@
+//Author: Patrick Stewart
+//Purpose: 
+
 export const Chat = (chatObj, userObj) => {
     console.log("chat object:", chatObj)
     return `

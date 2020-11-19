@@ -1,3 +1,6 @@
+//Author: Patrick Stewart
+//Purpose: 
+
 const eventHub = document.querySelector(".container")
 const dispatchStateChangeEvent = () => {
     const taskStateChangedEvent = new CustomEvent("taskStateChanged")

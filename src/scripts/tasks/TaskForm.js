@@ -1,5 +1,7 @@
-import { getTasks, saveTask, useTasks } from "./TaskProvider.js"
+//Author: Patrick Stewart
+//Purpose: 
 
+import { getTasks, saveTask, useTasks } from "./TaskProvider.js"
 
 const contentTarget = document.querySelector(".taskModalContainer")
 const eventHub = document.querySelector(".container")

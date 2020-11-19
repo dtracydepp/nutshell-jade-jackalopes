@@ -1,3 +1,6 @@
+//Author: Patrick Stewart
+//Purpose: 
+
 import { Chat } from "./ChatHTML.js"
 import { deleteMessage, getChats, getUsers, useChats, useUsers } from "./ChatProvider.js"
 

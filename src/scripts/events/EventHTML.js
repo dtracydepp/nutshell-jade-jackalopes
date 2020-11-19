@@ -24,27 +24,18 @@ Listened for by WeatherDetail.js
 eventHub.addEventListener("click", clickEvent => {
     const [prefix, eventLocation] = clickEvent.target.id.split("--")
     if (prefix === "showWeatherButton") {
-    const weatherClicked = new CustomEvent("showWeatherButtonClicked", {
-        detail: {
-            eventLocation: eventLocation
-        }
-    })
-    console.log("click", clickEvent)
-    eventHub.dispatchEvent(weatherClicked)
+        const weatherClicked = new CustomEvent("showWeatherButtonClicked", {
+            detail: {
+                eventLocation: eventLocation
+            }
+        })
+        console.log("click", clickEvent)
+        eventHub.dispatchEvent(weatherClicked)
     }
 })
 
 //UNSURE ABOUT WEATHER BUTTON
 
-eventHub.addEventListener("click", clickEvent => {
-    
-    if (clickEvent.target.id === "addEventButton") {
-    const newEventClicked = new CustomEvent("newEventButtonClicked")
-    }
-    console.log("clicked new EVENT BUTTON", clickEvent)
-    eventHub.dispatchEvent(newEventClicked)
-    
-})
 
 
 

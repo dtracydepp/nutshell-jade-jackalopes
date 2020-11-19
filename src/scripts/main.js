@@ -2,19 +2,20 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 
-import "./events/EventProvider.js"
-import { EventForm } from "./events/EventForm.js"
-import { EventList } from "./events/EventList.js"
 import "./events/EventHTML.js"
+import "./events/EventProvider.js"
+// import "./events/EventModalTester.js"
+import { EventList } from "./events/EventList.js"
 
 import "./Weather/WeatherList.js"
+import "./events/EventForm.js"
 
 LoginForm()
 RegisterForm()
 Nutshell()
+//openEventModal()
 
-
-EventForm()
+// EventForm()
 EventList()
 
 

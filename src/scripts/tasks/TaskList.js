@@ -27,7 +27,7 @@ const render = (taskCollection) => {
 }
 
 eventHub.addEventListener("click", event => {
-    if (event.target.id.startsWith("delete")) {
+    if (event.target.id.startsWith("deleteTask")) {
         const [prefix, id] = event.target.id.split("--")
         deleteTask(id).then(
             () => {

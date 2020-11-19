@@ -1,4 +1,4 @@
-// Keeps track of the news data
+// Interacts with the API
 
 
 
@@ -22,10 +22,12 @@ export const getArticles = () => {
         })
 
 }
-// not sure I need this
+
+
 export const useArticles = () => {
     return news.slice()
 }
+
 
 export const saveArticles =(news) => {
 return fetch("http://localhost:8088/news", {
@@ -40,10 +42,12 @@ return fetch("http://localhost:8088/news", {
     .then(dispatchStateChangeEvent) 
 }
 
-export const deleteArticle = userId => {
-    return fetch(`http://localhost:8088/news/${userId}`, {
+
+export const deleteArticle = newsId => {
+    return fetch(`http://localhost:8088/news/${newsId}`, {
         method: "DELETE"
     })
         .then(getArticles)
 
 }
+

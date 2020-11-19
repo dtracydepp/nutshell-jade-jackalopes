@@ -23,16 +23,16 @@ const render = () => {
     </fieldset>
     <fieldset>
         <label for "url">Link to Article:</label>
-        <textarea id="news--url" placeholder="url"></textarea>
+        <textarea id="news--url" <a href = "url"></textarea></a>
     </fieldset>
     </form>
         <button id="saveArticle">Save Article</button>
     `
 
-    // not sure if I need a return statement
+    
 }
 
-// not sure if this is right
+
 eventHub.addEventListener("click", clickEvent => {
 
     if(clickEvent.target.id === "saveArticle") {

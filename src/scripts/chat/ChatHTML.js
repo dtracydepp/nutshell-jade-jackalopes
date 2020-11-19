@@ -1,4 +1,4 @@
-export const Chat = (chatObj) => {
+export const Chat = (chatObj, UserObj) => {
     console.log("chat object:", chatObj)
     return `
     <section class="chat">

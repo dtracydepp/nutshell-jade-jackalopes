@@ -40,9 +40,10 @@ export const EventList = () => {
         //     return event
         // }
         //     ).sort((a, b) => a.eventDate.localeCompare(b.eventDate))
+        const activeUser = parseInt(sessionStorage.getItem("activeUser"))
         const allEvents = useEvents().sort((a, b) => a.eventDateUTC - b.eventDateUTC)
         console.log(allEvents)
-        const upcomingEvents = allEvents.filter(event => event.eventDateUTC> currentDateUTC)
+        const upcomingEvents = allEvents.filter(event => event.eventDateUTC> currentDateUTC && event.userId === activeUser)
         console.log(upcomingEvents, "upcoming events")
         const closest = upcomingEvents.reduce((a, b) => {
                 let aDiff = Math.abs(a.eventDateUTC - currentDateUTC);

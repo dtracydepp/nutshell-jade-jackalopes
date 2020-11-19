@@ -12,7 +12,7 @@ const eventHub = document.querySelector(".container")
 const render = () => {
     eventTarget.innerHTML = `
     <input id="event--name" type="text" placeholder="Event Name"/>
-    <input id="event--date" type="date"/>
+    <input id="event--date" type="datetime-local"/>
     <input id="event--location" type="number" placeholder="Event Zip Code"/>
     <button id="saveEvent">Save Event</button>
     `
@@ -32,6 +32,8 @@ eventHub.addEventListener("click", clickEvent => {
     //key value pairs here
     const newEvent = {
         eventName,
+        "eventDateUTC": Date.parse(eventDate),
+        // "eventDateCompare": eventDate.toISOString(),
         eventDate,
         eventLocation,
         userId

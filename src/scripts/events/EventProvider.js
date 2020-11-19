@@ -53,8 +53,8 @@ export const saveEvent = (event) => {
 }
 
 //deletes event from API
-export const deleteEvent = eventId => {
-    return fetch(`http://localhost:8088/events/${eventId}`, {
+export const deleteEvent = id => {
+    return fetch(`http://localhost:8088/events/${id}`, {
         method: "DELETE"
     })
     .then(getEvents)

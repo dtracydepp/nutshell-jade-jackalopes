@@ -1,20 +1,33 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
-import { TaskForm } from "./tasks/TaskForm.js"
-import { TaskList } from "./tasks/TaskList.js"
 
+<<<<<<< HEAD
 import "./events/EventProvider.js"
 import { EventForm } from "./events/EventForm.js"
 import { EventList } from "./events/EventList.js"
 import "./events/EventHTML.js"
 import { ChatList } from "./chat/ChatList.js"
 import { ChatForm } from "./chat/ChatForm.js"
+=======
+const eventHub = document.querySelector(".container")
+>>>>>>> master
 
+eventHub.addEventListener("userAuthenticated", e => {
+    Nutshell()
+}
+)
 
+if (sessionStorage.getItem("activeUser") !== null) {
+Nutshell()
+}
+
+else {
 LoginForm()
 RegisterForm()
-Nutshell()
+}
+
+
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -25,6 +38,7 @@ Nutshell()
 */
 
 
+<<<<<<< HEAD
 TaskForm()
 TaskList()
 
@@ -33,3 +47,5 @@ EventList()
 
 ChatForm()
 ChatList()
+=======
+>>>>>>> master

@@ -1,27 +1,29 @@
 import { Chat } from "./ChatHTML.js"
-import { deleteMessage, getChats, useChats} from "./ChatProvider.js"
+import { deleteMessage, getChats, getUsers, useChats, useUsers } from "./ChatProvider.js"
 
 
 const chatContainer = document.querySelector(".chatContainer");
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("chatStateChanged", () => ChatList())
-let chats = []
 
 export const ChatList = () => {
-    getChats() //getUsers, .map & find
+    getChats() 
+    .then(getUsers)
     .then(() => {
-        chats = useChats()
+        const chats = useChats()
+        const users = useUsers()
+        render(chats, users)
     })
-    .then(render)
 }
 
-const render = () => {
+const render = (allChats, allUsers) => {
     if (sessionStorage.activeUser) {
     let chatHTMLRepresentation = ""
-    for (const chat of chats) {
-        chatHTMLRepresentation += Chat(chat) // put this in forEach, don't need for of from line 22
-    }
+    allChats.forEach(chat => {
+        const userChats = allUsers.find(user => user.id === chat.userId)
+        chatHTMLRepresentation += Chat(chat, userChats)}) 
+    
     chatContainer.innerHTML = `
     <h3>Messages:</h3>
     ${chatHTMLRepresentation}
@@ -40,18 +42,3 @@ eventHub.addEventListener("click", event => {
         )   
     }
 })
-
-let users = []
-let userChats = []
-
-const getUserChats = (user) => {
-    const allChats = userChats.filter(chatMessages => chatMessages.userId === user.id) //no need to filter, need to use forEach 
-    return allChats
-}
-
-export const getUsername =  username => {
-    const userObj = username.map(userChat => {
-        return users.find(user => user.id === userChat.userId)
-    })
-    return userObj
-}

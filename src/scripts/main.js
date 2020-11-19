@@ -1,29 +1,22 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
-import { TaskForm } from "./tasks/TaskForm.js"
-import { TaskList } from "./tasks/TaskList.js"
 
-import "./events/EventProvider.js"
-import { EventForm } from "./events/EventForm.js"
-import { EventList } from "./events/EventList.js"
-import "./events/EventHTML.js"
+const eventHub = document.querySelector(".container")
 
+eventHub.addEventListener("userAuthenticated", e => {
+    Nutshell()
+}
+)
 
-import "./events/EventProvider.js"
-import { EventForm } from "./events/EventForm.js"
-import { EventList } from "./events/EventList.js"
-import "./events/EventHTML.js"
+if (sessionStorage.getItem("activeUser") !== null) {
+Nutshell()
+}
 
-import "./Weather/WeatherList.js"
-
+else {
 LoginForm()
 RegisterForm()
-Nutshell()
-
-
-EventForm()
-EventList()
+}
 
 
 
@@ -36,8 +29,3 @@ EventList()
 */
 
 
-TaskForm()
-TaskList()
-
-EventForm()
-EventList()

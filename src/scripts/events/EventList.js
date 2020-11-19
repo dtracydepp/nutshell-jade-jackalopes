@@ -72,19 +72,19 @@ eventHub.addEventListener("click", clickEvent => {
 
                 const upcomingEvents = updatedEvents.filter(event => event.eventDateUTC > currentDateUTC)
         console.log(upcomingEvents, "upcoming events")
-        const closest = upcomingEvents.reduce((a, b) => {
+        // const closest = upcomingEvents.reduce((a, b) => {
            
-                let aDiff = Math.abs(a.eventDateUTC - currentDateUTC);
-                let bDiff = Math.abs(b.eventDateUTC - currentDateUTC);
+        //         let aDiff = Math.abs(a.eventDateUTC - currentDateUTC);
+        //         let bDiff = Math.abs(b.eventDateUTC - currentDateUTC);
         
-            // if (aDiff == bDiff) {
-            //     // Choose largest vs smallest (> vs <)
-            //     return a < b ? a : b;
-            // } else {
-                return bDiff < aDiff ? b : a;
+        //     // if (aDiff == bDiff) {
+        //     //     // Choose largest vs smallest (> vs <)
+        //     //     return a < b ? a : b;
+        //     // } else {
+        //         return bDiff < aDiff ? b : a;
             
-        })
-        console.log("closest number", closest)
+        // })
+        // console.log("closest number", closest)
                 render(upcomingEvents)
             }
         )

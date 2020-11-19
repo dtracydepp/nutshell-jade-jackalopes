@@ -25,16 +25,6 @@ makeNoteForm()
 ChatForm()
 ChatList()
 
-<<<<<<< HEAD
- const eventHub = document.querySelector(".container")
- eventHub.addEventListener("click", clickEvent => {
-  if(clickEvent.target.id ==="newarticle"){
-     // console.log("I hear you")
-   const newArticle = new CustomEvent("addNewArticle")
-     eventHub.dispatchEvent(newArticle)
-     }
- })
-=======
 // const eventHub = document.querySelector(".container")
 // eventHub.addEventListener("click", clickEvent => {
 //     if(clickEvent.target.id ==="newarticle"){
@@ -43,5 +33,4 @@ ChatList()
 //     eventHub.dispatchEvent(newArticle)
 //     }
 // })
->>>>>>> master
 }

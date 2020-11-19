@@ -2,16 +2,7 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 
-<<<<<<< HEAD
-import "./events/EventProvider.js"
-import { EventForm } from "./events/EventForm.js"
-import { EventList } from "./events/EventList.js"
-import "./events/EventHTML.js"
-import { ChatList } from "./chat/ChatList.js"
-import { ChatForm } from "./chat/ChatForm.js"
-=======
 const eventHub = document.querySelector(".container")
->>>>>>> master
 
 eventHub.addEventListener("userAuthenticated", e => {
     Nutshell()
@@ -38,14 +29,3 @@ RegisterForm()
 */
 
 
-<<<<<<< HEAD
-TaskForm()
-TaskList()
-
-EventForm()
-EventList()
-
-ChatForm()
-ChatList()
-=======
->>>>>>> master

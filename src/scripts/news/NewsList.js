@@ -47,7 +47,7 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("delete")) {
         const [prefix, id] = clickEvent.target.id.split("--")
 
-        // Invoke the function to delete the article
+        // Invoke the function to delete the article and render the updated list
 
         deleteArticle(id).then(
             () => {

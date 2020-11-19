@@ -8,7 +8,7 @@ import "./events/EventProvider.js"
 import { EventForm } from "./events/EventForm.js"
 import { EventList } from "./events/EventList.js"
 import "./events/EventHTML.js"
-import { ChatForm } from "./chat/ChatForm.js"
+import "./chat/ChatForm.js"
 import { ChatList } from "./chat/ChatList.js"
 
 
@@ -31,5 +31,5 @@ TaskList()
 EventForm()
 EventList()
 
-ChatForm()
+// ChatForm()
 ChatList()

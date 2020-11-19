@@ -5,10 +5,23 @@ import "./news/NewsForm.js"
 import { NewsList } from "./news/NewsList.js"
 
 
+const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("userAuthenticated", e => {
+    Nutshell()
+}
+)
+
+if (sessionStorage.getItem("activeUser") !== null) {
+Nutshell()
+}
+
+else {
 LoginForm()
 RegisterForm()
-Nutshell()
-NewsList()
+}
+
+
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -17,3 +30,5 @@ NewsList()
     4. Also, if the user authenticates, and the login form is initially shown
         ensure that the Nutshell component gets rendered
 */
+
+

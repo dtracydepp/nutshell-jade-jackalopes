@@ -6,6 +6,19 @@ const dispatchStateChangeEvent = () => {
 }
 
 let chats = []
+let users = []
+
+export const getUsers = () => {
+    return fetch ("http://localhost:8088/users")
+    .then(response => response.json())
+    .then(parsedUsers => {
+        users = parsedUsers
+    })
+}
+
+export const useUsers = () => {
+    return users.slice()
+}
 
 export const getChats = () => {
     return fetch ("http://localhost:8088/chats")

@@ -4,7 +4,6 @@
 export const NewsAsHTML =(newsObject) => {
     return `
     <div class="newsContainer">
-        <h3 class "news">My News Articles:</h3>
         <div class "news--title">Title: ${newsObject.title}</div>
         <div class "news--synopsis">Synopsis: ${newsObject.synopsis}</div>
         <div class "news--url">Link to Article: ${newsObject.url}</div>

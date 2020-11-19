@@ -7,7 +7,6 @@ import {saveArticles} from "./NewsProvider.js"
 const contentTarget = document.querySelector(".newsModalContainer")
 const eventHub = document.querySelector(".container")
 
-
 // function that puts the HTML for the news form on the DOM
 const render = () => {
     console.log("Yes, here is the news form")
@@ -35,11 +34,12 @@ const render = () => {
 
 // not sure if this is right
 eventHub.addEventListener("click", clickEvent => {
+
     if(clickEvent.target.id === "saveArticle") {
         console.log(clickEvent)
         const title = document.querySelector("#news--title").value
         const synopsis = document.querySelector("#news--synopsis").value
-        const url = parseInt(document.querySelector("#news--url").value)
+        const url = document.querySelector("#news--url").value
         const userId = parseInt(sessionStorage.getItem("activeUser"))
         const timestamp = Date.now()
 
@@ -53,6 +53,7 @@ eventHub.addEventListener("click", clickEvent => {
         }
 // Send the article to the API
         saveArticles(newsArticle)
+        contentTarget.innerHTML = ""
     }
 })
 

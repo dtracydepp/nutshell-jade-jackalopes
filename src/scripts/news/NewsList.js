@@ -1,14 +1,14 @@
 // turns news data into HTML (from NewsHTML.js) puts news list in the selected element.
-import {getArticles, useArticles} from "./src/scripts/news/NewsProvider.js"
-import {NewsAsHTML} from "./src/scripts/news/NewsHTML.js"
+import {getArticles, useArticles} from "./NewsProvider.js"
+import {NewsAsHTML} from "./NewsHTML.js"
 
 const eventHub = document.querySelector(".container")
 const newsContainer = document.querySelector(".newsContainer")
 
 // listens for the new article event 
-eventHub.addEventListener ("newsStateChangedEvent", () => {
+eventHub.addEventListener ("newsStateChanged", () => {
 
-    populateNewsList()
+    NewsList()
 })
 
 // get the data and pass to function that puts it on the DOM
@@ -34,7 +34,7 @@ const render = (newsCollection) => {
     }
        
    newsContainer.innerHTML += `
-   <h3>My News Articles:</h3>
+   <h3>News:</h3>
    ${newsHTMLRepresentation}`
     console.log("YAY")
 }

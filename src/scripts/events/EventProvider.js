@@ -31,7 +31,7 @@ export const getEvents = () => {
 
 //creates a usable copy of events
 export const useEvents = () => {
-    return events.slice().sort((a, b) => a.eventDateUTC - b.eventDateUTC)
+    return events.slice()
 }
 
 //saves event onto DOM

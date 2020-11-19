@@ -8,9 +8,10 @@ const eventHub = document.querySelector(".container")
 //listens for newEventSaved, calls EventList when it happens
 eventHub.addEventListener("newEventSaved", () => EventList())
 
-const currentDate = new Date()
+const currentDate = new Date().toLocaleDateString()
 const currentDateUTC = Date.parse(currentDate)
 console.log(currentDateUTC)
+console.log(currentDate)
 
 
 
@@ -33,15 +34,17 @@ ${eventsHTMLRepresentations}
 export const EventList = () => {
     getEvents()
     .then(() => {
-        const allEvents = useEvents()
+        // const allEvents = useEvents().filter(event => {
+        //     const result = event.eventDate.localeCompare(currentDate)
+        //     console.log("result", result)
+        //     return event
+        // }
+        //     ).sort((a, b) => a.eventDate.localeCompare(b.eventDate))
+        const allEvents = useEvents().sort((a, b) => a.eventDateUTC - b.eventDateUTC)
         console.log(allEvents)
-        const upcomingEvents = allEvents.filter(event => event.eventDateUTC > currentDateUTC)
+        const upcomingEvents = allEvents.filter(event => event.eventDateUTC> currentDateUTC)
         console.log(upcomingEvents, "upcoming events")
         const closest = upcomingEvents.reduce((a, b) => {
-            // for (const event of upcomingEvents) {
-                // console.log("all events", allEvents)
-            // if (event.eventDateUTC > currentDateUTC) {
-            //     console.log("eventdates", event.eventDateUTC)
                 let aDiff = Math.abs(a.eventDateUTC - currentDateUTC);
                 let bDiff = Math.abs(b.eventDateUTC - currentDateUTC);
         
@@ -53,7 +56,7 @@ export const EventList = () => {
             
         })
         console.log("closest number", closest)
-        render(allEvents)
+        render(upcomingEvents)
     })
 }
 
@@ -65,15 +68,12 @@ eventHub.addEventListener("click", clickEvent => {
         //once deleted then invoke useEvents and render new event list
         deleteEvent(id).then(
             () => {
-                const updatedEvents = useEvents()
+                const updatedEvents = useEvents().sort((a, b) => a.eventDateUTC - b.eventDateUTC)
 
                 const upcomingEvents = updatedEvents.filter(event => event.eventDateUTC > currentDateUTC)
         console.log(upcomingEvents, "upcoming events")
         const closest = upcomingEvents.reduce((a, b) => {
-            // for (const event of upcomingEvents) {
-                // console.log("all events", allEvents)
-            // if (event.eventDateUTC > currentDateUTC) {
-            //     console.log("eventdates", event.eventDateUTC)
+           
                 let aDiff = Math.abs(a.eventDateUTC - currentDateUTC);
                 let bDiff = Math.abs(b.eventDateUTC - currentDateUTC);
         
@@ -85,7 +85,7 @@ eventHub.addEventListener("click", clickEvent => {
             
         })
         console.log("closest number", closest)
-                render(updatedEvents)
+                render(upcomingEvents)
             }
         )
     }

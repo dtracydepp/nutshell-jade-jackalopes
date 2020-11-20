@@ -1,8 +1,10 @@
 //Author: Patrick Stewart
-//Purpose: 
+//Purpose: Provides HTML string representation for chats
 
+//convert object to HTML string
 export const Chat = (chatObj, userObj) => {
     console.log("chat object:", chatObj)
+    // return html string
     return `
     <section class="chat">
     <h5 id="${userObj.id}" class="chat--name"><a href="">${userObj.username}</a></h5>

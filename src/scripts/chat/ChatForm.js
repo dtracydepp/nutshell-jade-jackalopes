@@ -1,11 +1,13 @@
 //Author: Patrick Stewart
-//Purpose: 
+//Purpose: Create the form which will save new Chats to DOM
 
 import { getChats, sendChat, useChats } from "./ChatProvider.js"
 
+//designates target area where chats will be sent
 const contentTarget = document.querySelector(".chatFormContainer")
 const eventHub = document.querySelector(".container")
 
+//will be called in Nutshell.js, holds Chat form
 export const ChatForm = () => {
     getChats().then(() => {
         const listOfChats = useChats()

@@ -1,12 +1,14 @@
 //Author: Patrick Stewart
-//Purpose: 
+//Purpose: //Purpose: Provides HTML string representation for tasks
 
 import { completeTask } from "./TaskProvider.js"
 
 const eventHub = document.querySelector(".container")
 
+//convert object to HTML string
 export const Task = (taskObj) => {
     console.log(taskObj)
+    // return html string
     return `
     <section class="task">
     <h5 class="task--name">Task: ${taskObj.name}</h5>

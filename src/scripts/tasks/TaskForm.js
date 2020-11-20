@@ -1,11 +1,13 @@
 //Author: Patrick Stewart
-//Purpose: 
+//Purpose: Create the form which will save new Tasks to DOM
 
 import { getTasks, saveTask, useTasks } from "./TaskProvider.js"
 
+//designates target area where tasks will be sent
 const contentTarget = document.querySelector(".taskModalContainer")
 const eventHub = document.querySelector(".container")
 
+//will be called in Nutshell.js, holds Task form
 export const TaskForm = () => {
     getTasks().then(() => {
         const listOfTasks = useTasks()

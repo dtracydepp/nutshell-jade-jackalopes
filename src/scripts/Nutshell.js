@@ -12,8 +12,6 @@ import "./Weather/WeatherList.js"
 
 import { ChatList } from "./chat/ChatList.js"
 import { ChatForm } from "./chat/ChatForm.js"
-import { NewsList } from "./news/NewsList.js"
-import { makeNoteForm } from "./news/NewsForm.js"
 
 export const Nutshell = () => {
     // Render all your UI components here

@@ -53,7 +53,7 @@ eventHub.addEventListener("click", clickEvent => {
         }
 // Send the article to the API
         saveArticles(newsArticle)
-        contentTarget.innerHTML = ""
+        // contentTarget.innerHTML = ""
     }
 })
 

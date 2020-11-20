@@ -1,3 +1,6 @@
+//Author: Patrick Stewart
+//Purpose: 
+
 import { deleteTask, getTasks, useTasks } from "./TaskProvider.js";
 import { Task } from "./TaskHTML.js"
 
@@ -27,7 +30,7 @@ const render = (taskCollection) => {
 }
 
 eventHub.addEventListener("click", event => {
-    if (event.target.id.startsWith("delete")) {
+    if (event.target.id.startsWith("deleteTask")) {
         const [prefix, id] = event.target.id.split("--")
         deleteTask(id).then(
             () => {

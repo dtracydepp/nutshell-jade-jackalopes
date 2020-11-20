@@ -1,3 +1,6 @@
+//Author: Patrick Stewart
+//Purpose: 
+
 const eventHub = document.querySelector(".container")
 const dispatchStateChangeEvent = () => {
     const taskStateChangedEvent = new CustomEvent("taskStateChanged")
@@ -12,12 +15,12 @@ export const getTasks = () => {
     .then(response => response.json())
     .then(parsedTasks => {
         tasks = parsedTasks
-        console.log(parsedTasks)
+        console.log("parsed Tasks:", parsedTasks)
     })
 }
 
 export const useTasks = () => {
-    return tasks.slice()  //tasks.slice.filter for isComplete
+    return tasks.slice() 
 }
 
 export const saveTask = task => {

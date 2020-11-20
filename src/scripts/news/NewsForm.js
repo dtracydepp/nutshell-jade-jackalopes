@@ -23,7 +23,7 @@ const render = () => {
     </fieldset>
     <fieldset>
         <label for "url">Link to Article:</label>
-        <textarea id="news--url" <a href = "url"></textarea></a>
+        <textarea id="news--url"><a href = "url"></a></textarea>
     </fieldset>
     </form>
         <button id="saveArticle">Save Article</button>

@@ -1,3 +1,5 @@
+import { getFriends, useFriends } from "./FriendProvider.js"
+
 export const friendList = () => {
     const contentTarget = document.querySelector(".friendContainer")
     let friendHTMLRep = ""
@@ -34,5 +36,22 @@ eventHub.addEventListener("click", clickEvent => {
     eventHub.dispatchEvent(newFriend)
     console.log(userName)
     }
+})
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("delete")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        // Invoke the function to delete the friend and render the updated list
+
+        deleteFriend(id).then(
+            () => {
+                const updatedfriends = useFriends()
+                render(updatedfriends)
+            }
+        )
+
+    }
+
 })
 

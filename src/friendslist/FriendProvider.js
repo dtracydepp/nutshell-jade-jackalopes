@@ -29,3 +29,10 @@ export const addFriends=(friends) => {
     }
 
     
+    export const deleteFriend = userId => {
+        return fetch(`http://localhost:8088/friends/${userId}`, {
+            method: "DELETE"
+        })
+            .then(getFriends)
+    
+    }

@@ -4,7 +4,7 @@
 
 const eventHub = document.querySelector(".container")
 
-// not sure if I need this
+
 const dispatchStateChangeEvent = () => {
     const newsStateChangedEvent = new CustomEvent("newsStateChanged")
 

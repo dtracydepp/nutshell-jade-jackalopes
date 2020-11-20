@@ -9,19 +9,23 @@ import "./events/EventHTML.js"
 
 import "./Weather/WeatherList.js"
 
-import { ChatList } from "./chat/ChatList.js"
-import { ChatForm } from "./chat/ChatForm.js"
+// import { ChatList } from "./chat/ChatList.js"
+// import { ChatForm } from "./chat/ChatForm.js"
+import { friendList } from "../friendslist/FriendList.js"
 
 export const Nutshell = () => {
     // Render all your UI components here
+    
+friendList()
 TaskForm()
 TaskList()
 
 EventForm()
 EventList()
 NewsList()
-ChatForm()
-ChatList()
+// ChatForm()
+// ChatList()
+
 
 const eventHub = document.querySelector(".container")
 eventHub.addEventListener("click", clickEvent => {

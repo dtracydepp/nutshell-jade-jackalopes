@@ -11,7 +11,11 @@
 
 <body>
     <main class="container">
-        <header class=banner></header>
+        <header class="banner">
+            <img id="logo" src="https://i.pinimg.com/originals/be/de/ae/bedeae8ffe424d5b1894a5bcd538d623.jpg"
+                alt="Jumping Jackalope">
+        </header>
+        <h1 class="mainPageHeading">Nutshell</h1>
         <article class="auth">
             <section class="auth--login"></section> 
             <section class="auth--register"></section>
@@ -25,7 +29,10 @@
                     </div>
                     <div class="tasksContainer"></div>
                 </article>
+                <article class="eventAndWeatherContainer">
                 <div class="eventContainer"></div>
+                <div class="weatherContainer"></div>
+                </article>
             </section>
             <section class="socialContainer">
                 <div class="chatFormContainer"></div>
@@ -34,11 +41,13 @@
             </section>
             </section>
         </article>
+        <section class= "modals">
         <div class="modal  eventModalContainer"></div>
         <div class="modal taskModalContainer"></div>
         <div class="modal newsModalContainer"></div>
+        </section>
     </main>
-
+    <footer class="footer">&#169; Jumping Jade Jackalopes 2020</footer>
     <script src="./scripts/main.js" type="module"></script>
 
 </body>

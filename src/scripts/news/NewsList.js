@@ -36,7 +36,7 @@ const render = (newsCollection) => {
     }
 
     newsContainer.innerHTML += `
-   <h3>News:</h3>
+   <h3>My News:</h3>
    ${newsHTMLRepresentation}`
     console.log("YAY")
 }

@@ -7,7 +7,7 @@ import { WeatherHTML } from "./WeatherHTML.js";
 import { useWeatherItems } from "./WeatherProvider.js"
 
 const eventHub = document.querySelector(".container")
-const weatherContainer = document.querySelector(".eventContainer") //<< Might change containers
+const weatherContainer = document.querySelector(".weatherContainer") //<< Might change containers
 
 
 eventHub.addEventListener("showWeatherButtonClicked", event => { 

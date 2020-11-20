@@ -11,6 +11,7 @@ const eventHub = document.querySelector(".container")
 //creates event form HTML with inputs and renders form to DOM
 const render = () => {
     eventTarget.innerHTML = `
+    <h3>New Event</h3>
     <input id="event--name" type="text" placeholder="Event Name"/>
     <input id="event--date" type="datetime-local"/>
     <input id="event--location" type="number" placeholder="Event Zip Code"/>

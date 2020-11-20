@@ -26,6 +26,7 @@ for (const event of eventsArray) {
     eventsHTMLRepresentations += EventAsHTML(event)
 }
 eventsContainer.innerHTML = `
+<h3>My Events:</h3>
 ${eventsHTMLRepresentations}
 `
 }

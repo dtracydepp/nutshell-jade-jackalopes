@@ -16,6 +16,7 @@ export const TaskForm = () => {
 
 const render = () => {
     contentTarget.innerHTML = `
+    <h3>New Task</h3>
     <textarea id="task--name" placeholder="What Is Your Task?"></textarea>
     <p>Task To Be Completed By:</p>
     <input id="task--date" type="date"/>

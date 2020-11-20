@@ -1,10 +1,10 @@
-/* .dashboard {
+.dashboard {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
-} */
+} 
 
-/* .formContainer {
+.formContainer {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
@@ -43,4 +43,4 @@
     margin: 10px;
     padding: 1px;
     flex-basis: 25%;
-} */
+}

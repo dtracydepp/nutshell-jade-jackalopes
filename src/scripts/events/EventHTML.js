@@ -38,7 +38,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
-//UNSURE ABOUT WEATHER BUTTON
+
 
 eventHub.addEventListener("click", clickEvent => {
     const [prefix] = clickEvent.target.id

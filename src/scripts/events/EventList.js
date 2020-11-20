@@ -1,17 +1,21 @@
+//Author: Erica Purpose: Shows list of events on DOM
 import { EventAsHTML } from "./EventHTML.js"
 import { getEvents, useEvents, deleteEvent } from "./EventProvider.js"
 // import { getWeather, useWeather } from "../WeatherProvider.js"
 
+//targets event container
 const eventsContainer = document.querySelector(".eventContainer")
 const eventHub = document.querySelector(".container")
 
 //listens for newEventSaved, calls EventList when it happens
 eventHub.addEventListener("newEventSaved", () => EventList())
 
+//creates current date normally and in UTC, both used for compairsons to dates being 
+//passed in to events
 const currentDate = new Date().toLocaleDateString()
 const currentDateUTC = Date.parse(currentDate)
-console.log(currentDateUTC)
-console.log(currentDate)
+// console.log(currentDateUTC)
+// console.log(currentDate)
 
 
 
@@ -25,6 +29,7 @@ for (const event of eventsArray) {
     //event HTML has parameters for event
     eventsHTMLRepresentations += EventAsHTML(event)
 }
+//creates HTML respresentations of events on DOM
 eventsContainer.innerHTML = `
 <h3>My Events:</h3>
 ${eventsHTMLRepresentations}
@@ -41,11 +46,16 @@ export const EventList = () => {
         //     return event
         // }
         //     ).sort((a, b) => a.eventDate.localeCompare(b.eventDate))
+        //only shows events of active user
         const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+        //all events after the current date to show on DOM
         const allEvents = useEvents().sort((a, b) => a.eventDateUTC - b.eventDateUTC)
-        console.log(allEvents)
+        // console.log(allEvents)
+        //upcoming events are any events after current date and time and for active user
         const upcomingEvents = allEvents.filter(event => event.eventDateUTC> currentDateUTC && event.userId === activeUser)
-        console.log(upcomingEvents, "upcoming events")
+        // console.log(upcomingEvents, "upcoming events")
+        //closest was a function finding the next closest event
+        //closest was made before the all events filter, now unnecessary
         // const closest = upcomingEvents.reduce((a, b) => {
         //         let aDiff = Math.abs(a.eventDateUTC - currentDateUTC);
         //         let bDiff = Math.abs(b.eventDateUTC - currentDateUTC);

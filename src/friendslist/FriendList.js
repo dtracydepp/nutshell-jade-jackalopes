@@ -1,5 +1,7 @@
+// Responsible for displaying the data to the DOM
 import { getFriends, useFriends } from "./FriendProvider.js"
 
+// put the list of articles in the friend container
 export const friendList = () => {
     const contentTarget = document.querySelector(".friendContainer")
     let friendHTMLRep = ""
@@ -7,11 +9,13 @@ export const friendList = () => {
     contentTarget.innerHTML = `${friendHTMLRep}`
 }
 
+// adds a "add friend" button
 const addFriend = () => {
     return `<button id="addFriendBtn">Add Friend</button>
     <input type = text id=addFriendInput>`
 }
 
+// listens for add friend button and searches the users and prompts persmission to add friend
 const eventHub = document.querySelector(".container")
 eventHub.addEventListener("click", clickEvent => {
     if(clickEvent.target.id ==="addFriendBtn"){
@@ -38,6 +42,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
+// listens for the delete button click
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("delete")) {
         const [prefix, id] = clickEvent.target.id.split("--")
@@ -54,4 +59,5 @@ eventHub.addEventListener("click", clickEvent => {
     }
 
 })
+
 

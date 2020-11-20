@@ -1,3 +1,5 @@
+// interacts with API
+
 let friends = []
 
 export const getFriends = () => {
@@ -29,10 +31,10 @@ export const addFriends=(friends) => {
     }
 
     
-    export const deleteFriend = userId => {
-        return fetch(`http://localhost:8088/friends/${userId}`, {
-            method: "DELETE"
-        })
-            .then(getFriends)
-    
-    }
+export const deleteFriend = userId => {
+    return fetch(`http://localhost:8088/friends/${userId}`, {
+        method: "DELETE"
+    })
+        .then(getFriends)
+
+}
